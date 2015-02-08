@@ -1,0 +1,42 @@
+<resources>
+
+    <string name="application_name">發票記錄</string>
+    
+    <string name="For_award">對獎</string>
+    <string name="add_scan">加入發票</string>
+    <string name="Statistics">統計</string>
+    <string name="TransactionRecord">交易記錄</string>
+    <string name="byself">輸入</string>
+    <string name="byscane">掃描</string>
+    <string name="add_success">新增成功</string>
+    <string name="alert_cancel">取消</string>
+    <string name="continue_scan">繼續掃描</string>
+    <string name="add_isExitTip">統一發票已經存在.</string>
+    <string name="showlist">顯示</string>
+    <string name="order">排序</string>
+    <string name="share">分享</string>
+    <string name="explanation">說明</string>
+    <string name="report">統一發票對獎結果</string>
+    <string name="checkReceipt">對獎</string>
+    <string name="ReceiptNumber">統一發票號碼:</string>
+    <string name="CreateDate">發票日期:</string>
+    <string name="alert_ok">確定</string>
+    <string name="input_tip_current_number">統一發票號碼請輸入前兩碼A-Z加8碼數字</string>
+    <string name="add_Receipt_title">新增發票</string>
+    <string name="year">年份:</string>
+    <string name="month">月份:</string>
+    <string name="displayContent">顯示內容:</string>
+    <string name="display_all">顯示全部</string>
+    <string name="display_byYear">依年份顯示</string>
+    <string name="super_award">特別獎</string>
+    <string name="special_award">特獎</string>
+    <string name="one_award">頭獎</string>
+    <string name="two_award">二獎</string>
+    <string name="three_award">三獎</string>
+    <string name="four_award">四獎</string>
+    <string name="five_award">五獎</string>
+    <string name="six_award">六獎</string>
+    <string name="talcount">總筆數</string>
+    <string name="Bonus">總獎金(元)</string>
+    <string name="delete">刪除</string>
+</resources>

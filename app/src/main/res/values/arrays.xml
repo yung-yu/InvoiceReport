@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="period">
+        <item >01 &#8211; 02月</item>
+        <item >03 &#8211; 04月</item>
+        <item >05 &#8211; 06月</item>
+        <item >07 &#8211; 08月</item>
+        <item >09 &#8211; 10月</item>
+        <item >11 &#8211; 12月</item>
+    </string-array>
+    <string-array name="edit">
+        <item>修改</item>
+        <item>刪除</item>
+    </string-array>
+</resources>

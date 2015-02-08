@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mian_button_margin">5dip</dimen>
+    <dimen name="mian_button_textSize">30dip</dimen>
+    <dimen name="mian_buttons_height">350dip</dimen>
+    <dimen name="list_item_height">60dip</dimen>
+    <dimen name="toolbar_height">50dip</dimen>
+    <dimen name="toolbar_textSize">20dip</dimen>
+    <dimen name="webview_magin">5dip</dimen>
+    <dimen name="dialog_magin">5dip</dimen>
+    <dimen name="dialog_textSize">20dip</dimen>
+    <dimen name="dialog_itemHeight">35dip</dimen>
+    <dimen name="result_Height">280dip</dimen>
+    <dimen name="result_width">200dip</dimen>
+</resources>

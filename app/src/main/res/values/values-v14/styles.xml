@@ -1,0 +1,18 @@
+<resources>
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+        <item name="android:windowActionBar">false</item>
+    </style>
+<style name="mainButton" parent="android:style/Widget.Button">
+        <item name="android:textSize">@dimen/mian_button_textSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ffffff</item>
+        
+    </style>
+</resources>

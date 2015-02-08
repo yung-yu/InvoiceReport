@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+
+    <item
+        android:id="@+id/showlist"
+        android:icon="@drawable/order_list"
+        android:orderInCategory="1"
+        android:title="@string/showlist"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/addBySelf"
+        android:icon="@drawable/pen"
+        android:orderInCategory="1"
+        android:title="@string/byself"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/addByScan"
+        android:icon="@drawable/camera"
+        android:orderInCategory="1"
+        android:title="@string/byscane"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/delete"
+        android:orderInCategory="1"
+        android:title="@string/delete"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/checkReceipt"
+        android:orderInCategory="1"
+        android:title="@string/checkReceipt"
+        app:showAsAction="never"
+        />
+     <item
+        android:id="@+id/report"
+        android:icon="@drawable/history_report"
+        android:orderInCategory="1"
+        android:title="@string/report"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/share"
+        android:orderInCategory="1"
+        android:actionProviderClass="android.support.v7.widget.ShareActionProvider" 
+        android:title="@string/share"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/explanation"
+        android:icon="@android:drawable/ic_menu_share"
+        android:orderInCategory="1"
+        android:title="@string/explanation"
+        app:showAsAction="never"/>
+
+</menu>
