@@ -155,9 +155,8 @@ public class MainActivity extends BaseAcivity{
 		Intent intent = new Intent();
 		intent.setAction(Intent.ACTION_SEND);
 		intent.setType("image/*");
-        intent.putExtra(Intent.EXTRA_TITLE,"統一發票");
 		intent.putExtra(Intent.EXTRA_STREAM, mShareActionHelper.captureScreen());
-		startActivity(Intent.createChooser(intent, "分享到:"));
+		startActivity(Intent.createChooser(intent, getString(R.string.share_title)));
 	}
 
 	Calendar calender;
@@ -269,7 +268,7 @@ public class MainActivity extends BaseAcivity{
 	}
     public void showDeleteDialog(){
         AlertDialog.Builder ab = new AlertDialog.Builder(this);
-        ab.setTitle("選擇要刪除的日期");
+        ab.setTitle(R.string.delete_title);
         View view = LayoutInflater.from(this).inflate(R.layout.listdialog, null);
         sp_year = (Spinner) view.findViewById(R.id.spinner1);
         sp_month = (Spinner) view.findViewById(R.id.spinner2);
@@ -304,15 +303,16 @@ public class MainActivity extends BaseAcivity{
                 if(yearlist!=null){
                     final String  yearStr = yearlist.get(sp_year.getSelectedItemPosition());
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setMessage("確定要刪除 " + yearStr + "年"
-                                    + (Period.values()[sp_month.getSelectedItemPosition()].getString(context))
-                                    + "內所有發票.");
+                    String msg = getString(R.string.delete_tip_message);
+                    msg = msg.replace("&year",yearStr);
+                    msg = msg.replace("&msg",(Period.values()[sp_month.getSelectedItemPosition()].getString(context)));
+                    builder.setMessage(msg);
                     builder.setNegativeButton(R.string.alert_cancel,null);
                     builder.setPositiveButton(R.string.alert_ok,new OnClickListener(){
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             mReceiptData.deleteReceipt(yearStr,sp_month.getSelectedItemPosition());
-                            Toast.makeText(context,"刪除成功",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context,getString(R.string.delete_success),Toast.LENGTH_SHORT).show();
                             dialog.cancel();
                         }
                     });
@@ -329,14 +329,14 @@ public class MainActivity extends BaseAcivity{
         final List<Report> list = mReceiptData.getAllReports();
         if(list!=null){
             AlertDialog.Builder ab = new AlertDialog.Builder(this);
-            ab.setTitle("選擇兌獎日期");
+            ab.setTitle(R.string.select_award_date);
              ab.setAdapter(new ArrayAdapter<Report>(context, R.layout.datelistitem, list){
                  @Override
                  public View getView(int position, View convertView, ViewGroup parent) {
                      View view = super.getView(position, convertView, parent);
                      TextView tv  = (TextView) view;
                      Report report = getItem(position);
-                     tv.setText(report.getYear()+"年"+(Period.values()[report.getPeriod()].getString(context)));
+                     tv.setText(report.getYear()+getString(R.string.year_unit)+(Period.values()[report.getPeriod()].getString(context)));
                      return  view;
                  }
              },new OnClickListener(){
@@ -351,7 +351,7 @@ public class MainActivity extends BaseAcivity{
             ab.create().show();
         }
         else{
-            Toast.makeText(context,"還沒有兌獎記錄",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,getString(R.string.award_repoirt_empty),Toast.LENGTH_SHORT).show();
         }
     }
     public void toReport(String year,Period period){
@@ -434,7 +434,7 @@ public class MainActivity extends BaseAcivity{
 	ProgressDialog progressDialog;
 	private void showCheckReceiptDialog(){
 		progressDialog = new ProgressDialog(this);
-		progressDialog.setMessage("查詢對獎號碼...");
+		progressDialog.setMessage(getString(R.string.search_numbers_wait));
         progressDialog.show();
         ReceiptQuery.query(new ReceiptQuery.CallBack(){
 
@@ -444,11 +444,11 @@ public class MainActivity extends BaseAcivity{
                     @Override
                     public void run() {
                         progressDialog.cancel();
-                        progressDialog.setMessage("對獎中...");
+                        progressDialog.setMessage(getString(R.string.check_Receipt_wait));
                         AlertDialog.Builder ab = new AlertDialog.Builder(context);
-                        ab.setTitle("選擇發票日期:");
+                        ab.setTitle(getString(R.string.select_award_date));
                         List<String> data = new ArrayList<String>();
-                        data.add(year+" 年 "+period.getString(context));
+                        data.add(year+" "+getString(R.string.year_unit)+" "+period.getString(context));
                         ab.setAdapter(new ArrayAdapter<String>(context, R.layout.datelistitem, data), new OnClickListener() {
 
                             @Override

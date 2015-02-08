@@ -41,7 +41,7 @@ public class InvoiceWebFragment extends Fragment {
 				// TODO Auto-generated method stub
 				super.onProgressChanged(view, newProgress);
 				
-				 tv_progress.setText("載入進度 "+newProgress+"%");
+				 tv_progress.setText(getString(R.string.loading_progress)+newProgress+"%");
 				if(newProgress<100){
 					tv_progress.setVisibility(View.VISIBLE);
 				}else{

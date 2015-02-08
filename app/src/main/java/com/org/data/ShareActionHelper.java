@@ -159,7 +159,7 @@ public class ShareActionHelper{
 	}
     
 	private String getFileName(){
-		return context.getString(R.string.app_name)+".png";
+		return context.getString(R.string.application_name)+".png";
 	}
 
 	public  Uri captureScreen(){
@@ -189,7 +189,7 @@ public class ShareActionHelper{
         intent.setAction(Intent.ACTION_SEND);
         intent.setType("image/*");
         intent.putExtra(Intent.EXTRA_STREAM, captureScreen());
-        context.startActivity(Intent.createChooser(intent, "分享到:"));
+        context.startActivity(Intent.createChooser(intent,context.getString(R.string.share_title)));
     }
 	private class ShareAdapter extends BaseAdapter{
 		List<ResolveInfo> data;

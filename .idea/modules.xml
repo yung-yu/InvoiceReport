@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Rece.iml" filepath="$PROJECT_DIR$/Rece.iml" />
       <module fileurl="file://$PROJECT_DIR$/ReceiptReport.iml" filepath="$PROJECT_DIR$/ReceiptReport.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZXingLibs/ZXingLibs.iml" filepath="$PROJECT_DIR$/ZXingLibs/ZXingLibs.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />

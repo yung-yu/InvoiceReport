@@ -49,32 +49,5 @@ public enum ReceiptAwards {
 			}
     	    return R.drawable.wait;
     }
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		switch (this) {
-		case NONE:
-			return "沒中獎";
-		case SixAwards:
-			return "兩百塊,摸魚蝦媽喝";
-		case FiveAwards:
-			return "一張小朋友";
-		case FourAwards:
-			return "小朋友組一桌麻將";
-		case ThreeAwards:
-			return "一萬塊";
-		case TwoAwards:
-			return "四萬塊";
-		case OneAwards:
-			return "二十萬塊";
-		case SpecialAwards:
-			return "兩百萬拉";
-		case SuperSpecialAwards:
-			return "鄉親啊!! 一千萬!!";
-		default:
-			break;
-		}
-		return super.toString();
-	}
-     
+	
 }

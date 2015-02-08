@@ -2,13 +2,11 @@ package com.org.receipt;
 
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
@@ -26,14 +24,10 @@ import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.org.data.ReceiptData;
 import com.org.data.SharePerferenceHelper;
 import com.org.main.MainActivity;
@@ -209,7 +203,7 @@ public class ReceiptFragment extends Fragment{
         }
         public String getDateRange(String createDate,int period){
             int year = Integer.valueOf(createDate.substring(0, 3));
-            String msg = year+" 年 ";
+            String msg = year+getString(R.string.year_unit);
             msg+= Period.values()[period].getString(context);
             return msg;
         }
@@ -247,8 +241,11 @@ public class ReceiptFragment extends Fragment{
         }
         private void showDeleteTip(final Receipt receipt){
             AlertDialog.Builder ab = new AlertDialog.Builder(context);
-            ab.setTitle("是否要刪除？");
-            ab.setMessage("發票號碼:"+receipt.getReceiptID()+"\n"+"發票日期:"+receipt.getCreateDate());
+            ab.setTitle(R.string.delete_tip);
+            String msg = getString(R.string.delete_tip_receipt);
+            msg = msg.replace("&id",receipt.getReceiptID());
+            msg = msg.replace("&date",receipt.getCreateDate());
+            ab.setMessage(msg);
             ab.setNegativeButton(R.string.alert_cancel,new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -260,7 +257,7 @@ public class ReceiptFragment extends Fragment{
                 public void onClick(DialogInterface dialog, int which) {
                     mReceiptData.deleteReceipt(receipt);
                     updateCurrntValue();
-                    Toast.makeText(context,"刪除成功",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,getString(R.string.delete_success),Toast.LENGTH_SHORT).show();
                     dialog.cancel();
                 }
             });
@@ -268,7 +265,7 @@ public class ReceiptFragment extends Fragment{
         }
         private void showEditeReceipt(final Receipt receipt){
             AlertDialog.Builder ab = new AlertDialog.Builder(context);
-            ab.setTitle("修改發票");
+            ab.setTitle(R.string.repair_receipt);
             View convertView = LayoutInflater.from(context).inflate(R.layout.inputdialog, null);
             final EditText et_code = (EditText) convertView.findViewById(R.id.et_code);
             final EditText et_number = (EditText) convertView.findViewById(R.id.et_number);
@@ -308,7 +305,7 @@ public class ReceiptFragment extends Fragment{
                         mReceiptData.updateReceipt(receipt);
                         receipt.setStatus(false);
                         updateCurrntValue();
-                        Toast.makeText(context,"修改成功",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context,getString(R.string.repair_success),Toast.LENGTH_SHORT).show();
                     }
                     arg0.cancel();
 

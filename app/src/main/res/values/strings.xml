@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="application_name">發票記錄</string>
+    <string name="application_name">發票對獎</string>
     
     <string name="For_award">對獎</string>
     <string name="add_scan">加入發票</string>
@@ -39,4 +39,18 @@
     <string name="talcount">總筆數</string>
     <string name="Bonus">總獎金(元)</string>
     <string name="delete">刪除</string>
+    <string name="share_title">分享到:</string>
+    <string name="delete_title">選擇要刪除的日期:</string>
+    <string name="year_unit">年</string>
+    <string name="delete_tip_message">確定要刪除&#038;year年&#038;msg內所有發票.</string>
+    <string name="delete_success">刪除成功</string>
+    <string name="select_award_date">選擇對獎日期:</string>
+    <string name="award_repoirt_empty">還沒有對獎記錄</string>
+    <string name="search_numbers_wait">查詢對獎號碼...</string>
+    <string name="check_Receipt_wait">對獎中...</string>
+    <string name="loading_progress">載入進度...</string>
+    <string name="delete_tip">是否要刪除？</string>
+    <string name="delete_tip_receipt">"發票號碼:"&#038;id\n發票日期:&#038;date</string>
+    <string name="repair_receipt">修改發票</string>
+    <string name="repair_success">修改成功</string>
 </resources>
