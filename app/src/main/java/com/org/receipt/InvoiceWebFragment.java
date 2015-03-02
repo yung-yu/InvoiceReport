@@ -40,13 +40,7 @@ public class InvoiceWebFragment extends Fragment {
 			public void onProgressChanged(WebView view, int newProgress) {
 				// TODO Auto-generated method stub
 				super.onProgressChanged(view, newProgress);
-				
-				 tv_progress.setText(getString(R.string.loading_progress)+newProgress+"%");
-				if(newProgress<100){
-					tv_progress.setVisibility(View.VISIBLE);
-				}else{
-					tv_progress.setVisibility(View.GONE);
-				}
+
 			}
 		});
 		webView.setWebViewClient(new WebViewClient(){
@@ -60,15 +54,7 @@ public class InvoiceWebFragment extends Fragment {
 			
 		});
 		webView.loadUrl(URL);
-		webView.setOnLongClickListener(new OnLongClickListener() {
-			
-			@Override
-			public boolean onLongClick(View arg0) {
-				// TODO Auto-generated method stub
-				webView.reload();
-				return true;
-			}
-		});
+
 	}
 
 	@Override
