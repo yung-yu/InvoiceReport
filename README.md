@@ -19,3 +19,7 @@
 ##參考
 ---
 ###[Jsoup](http://jsoup.org/)
+<br/>
+##掃描QRCode下載APK
+---
+![](img/qrcode.png)  
